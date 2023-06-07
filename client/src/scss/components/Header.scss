@@ -1,5 +1,10 @@
 @import "../abstracts/variables";
 
 header { 
-    background: $primary-color; 
+    background: $primary-color;
+    color: $white;
+}
+
+header .logo {
+    height: 26px;
 }
