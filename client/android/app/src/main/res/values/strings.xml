@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PROCompetitivePricing</string>
+    <string name="title_activity_main">PROCompetitivePricing</string>
+    <string name="package_name">com.lowes.hackathon</string>
+    <string name="custom_url_scheme">com.lowes.hackathon</string>
+</resources>
