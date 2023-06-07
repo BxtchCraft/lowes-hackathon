@@ -1,0 +1,11 @@
+{
+  "name": "pro-competitive-pricing",
+  "version": "1.0.0",
+  "description": "This Lowe's hackathon project aims to leverage machine learning capabilities to drive competitive quotes for professionals, unlocking new opportunities for pricing optimization and enhancing their competitive edge in the market.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lindsay Zierk",
+  "license": "ISC"
+}
