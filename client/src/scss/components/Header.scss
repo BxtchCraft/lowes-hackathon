@@ -3,8 +3,28 @@
 header { 
     background: $primary-color;
     color: $white;
+    padding: 14px 16px;
 }
 
 header .logo {
     height: 26px;
+    display: block;
+}
+
+header #top {
+    display: flex;
+    justify-content: space-between;
+}
+
+header #top div {
+    display: flex;
+    justify-content: space-between;
+}
+
+header #top div svg {
+    margin: 0px 12px;
+}
+
+header #bottom {
+    margin: 12px 12px 0px 12px;
 }
