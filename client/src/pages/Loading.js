@@ -17,17 +17,10 @@ const LoadingPage = () => {
                 'eng',
                 { logger: m => console.log(m) }
             ).then(({ data: { text } }) => {
-                const regex = /(\d{18})\s+(.*?)\s+/g;
-                const matches = [];
-                let match;
-
-                while((match = regex.exec(text))) {
-                    const sku = match[1];
-                    const description = match[2];
-                    matches.push({sku, description});
-                }
-
-                console.log(matches);
+                console.log("FETCHING!");
+                fetch('/api/hello')
+                .then(response => response.json())
+                .then(data => console.log(data));
                 setRecognizedText(text);
             }).catch(error => {
                 console.error('An error occurred:', error);

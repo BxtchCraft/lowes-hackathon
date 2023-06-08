@@ -28,7 +28,7 @@ const MyQuotesPage = () => {
                     <span className="subtext">Open Until 9 PM</span></p>
                 </div>
                 <div>
-                    <FontAwesomeIcon icon={icon({name: 'chevron-right', family: 'sharp', style: 'regular'})} size="md" />
+                    <FontAwesomeIcon icon={icon({name: 'chevron-right', family: 'sharp', style: 'regular'})} size="sm" />
                 </div>
             </section>
 
@@ -41,8 +41,8 @@ const MyQuotesPage = () => {
             </section>
 
             <section className="buttons">
-                <button className="primary"><FontAwesomeIcon icon={icon({name: 'plus', family: 'sharp', style: 'regular'})} size="md" /> Create a New Quote</button>
-                <button onClick={handleOpenModal} className="secondary"><FontAwesomeIcon icon={icon({name: 'plus', family: 'sharp', style: 'regular'})} size="md" /> Create a New Competitive Quote</button>
+                <button className="primary"><FontAwesomeIcon icon={icon({name: 'plus', family: 'sharp', style: 'regular'})} size="sm" /> Create a New Quote</button>
+                <button onClick={handleOpenModal} className="secondary"><FontAwesomeIcon icon={icon({name: 'plus', family: 'sharp', style: 'regular'})} size="sm" /> Create a New Competitive Quote</button>
             </section>
 
             <section className="empty">
