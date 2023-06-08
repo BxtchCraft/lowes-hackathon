@@ -29,8 +29,18 @@ const LoadingPage = () => {
                     },
                     body: prompt
                 }).then(response => response.json())
-                .then(data => console.log(data))
-                .catch((error) => {
+                .then(data => {
+                    console.log(data);
+                    setRecognizedText('Building new quote...');
+                    fetch('/api/match', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'text/plain',
+                        },
+                        body: data
+                    })
+                    // Match items!
+                }).catch((error) => {
                     console.error('Error:', error);
                 });
             }).catch(error => {
