@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const path = require('path');
 
 // Define Routes
 // const productRoutes = require('./routes/productRoutes');
@@ -24,6 +25,19 @@ mongoose.connect(process.env.MONGODB_URI,
 .then(() => console.log('MongoDB connected...'))
 .catch(err => console.log(err));
 
+app.get('/api/hello', (req, res) => {
+    res.send({ express: 'Hello from Express!'});
+});
+
+app.use(express.static(path.join(__dirname, '../client/public')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/public/index.html'));
+});
+
+
 // Start Server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
+
+// comment
