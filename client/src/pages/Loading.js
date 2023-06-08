@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Tesseract from 'tesseract.js';
+import '../scss/pages/Loading.scss';
+import Spinner from "../components/Spinner";
 
 const LoadingPage = () => {
     console.log("Begin Loading...");
-    const [recognizedText, setRecognizedText] = useState('Loading...');
+    const [recognizedText, setRecognizedText] = useState('Scanning your quote...');
     const image = useSelector(state => state);
 
     useEffect(() => {
@@ -17,11 +19,20 @@ const LoadingPage = () => {
                 'eng',
                 { logger: m => console.log(m) }
             ).then(({ data: { text } }) => {
-                console.log("FETCHING!");
-                fetch('/api/hello')
-                .then(response => response.json())
-                .then(data => console.log(data));
-                setRecognizedText(text);
+                setRecognizedText('Finding comparables...');
+                const prompt = `Please extract the item description, model number, SKU number, quantity, and other relevant details from the provided text and return them in a JSON format:\n ${text}`;
+                console.log(prompt);
+                fetch('/api/prompt', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain',
+                    },
+                    body: prompt
+                }).then(response => response.json())
+                .then(data => console.log(data))
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
             }).catch(error => {
                 console.error('An error occurred:', error);
                 setRecognizedText(error);
@@ -30,8 +41,8 @@ const LoadingPage = () => {
     }, [image]);
 
     return (
-        <div>
-            <h1>Loading Page</h1>
+        <div className="body">
+            <Spinner />
             <p>{recognizedText}</p>
         </div>
     );
