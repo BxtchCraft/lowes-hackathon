@@ -1,0 +1,75 @@
+@import "../abstracts/variables";
+
+.interactive {
+    color: $secondary-color;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.subtext {
+    color: $gray-02;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.breadcrumbs {
+    padding: 0 16px;
+
+    .parent {
+        font-size: 14px;
+        font-weight: 700;
+        color: $secondary-color;
+    }
+
+    .separator {
+        font-size: 14px;
+        font-weight: 700;
+        color: $gray-04;
+    }
+
+    .current {
+        font-size: 14px;
+        font-weight: 400;
+        color: $gray-04;
+    }
+}
+
+.title {
+    background: $light-muted;
+    padding: 8px 16px;
+
+    h1 {
+        font-weight: 700;
+        font-size: 28px;
+    }
+}
+
+button {
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    padding: 18px;
+    width: 100%;
+}
+
+.primary {
+    color: $white;
+    background: $secondary-color;
+}
+
+.secondary {
+    background: $white;
+    border: 1px solid $secondary-color;
+    color: $secondary-color;
+}
+
+.ghost {
+    background: none;
+    color: $secondary-color;
+}
+
+h4 {
+    font-weight: 700;
+    font-size: 16px;
+}

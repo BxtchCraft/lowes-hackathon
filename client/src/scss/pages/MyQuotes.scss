@@ -1,0 +1,60 @@
+@import "../base/style";
+
+#location {
+    display: flex;
+    flex-direction: row;
+    padding: 12px 12px;
+    border-bottom: 1px solid $gray-03;
+
+
+    div {
+        margin-right: 12px;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    path {
+        fill: $secondary-color;
+    }
+
+    .interactive {
+        padding-top: 2px;
+    }
+}
+
+.buttons {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+
+    .primary {
+        margin-bottom: 16px;
+    }
+}
+
+.empty {
+    margin: 0px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 240px;
+
+    h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: $gray-02;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        line-height: 14px;
+    }
+    p {
+        font-size: 14px;
+        text-align: center;
+        color: $gray-04;
+        line-height: 20px;
+    }
+}
