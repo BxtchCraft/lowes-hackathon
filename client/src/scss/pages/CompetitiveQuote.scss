@@ -1,0 +1,120 @@
+@import "../base/style";
+
+img {
+    width: 88px;
+    height: 88px;
+    margin-right: 24px;
+}
+
+.card {
+    display: flex;
+    margin: 24px;
+    padding: 16px 16px 16px 24px;
+    background: $white;
+    border: 1px solid $gray-03;
+    border-radius: 15;
+}
+
+h4 {
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.itemInfo {
+    margin-top: 0;
+}
+
+small {
+    font-size: 10px;
+    font-weight: 400;
+    color: $gray-06;
+    line-height: 10px;
+    margin-top: -10px;
+}
+
+.quantitySelector {
+    display: flex;
+    flex-direction: row;
+}
+
+.minus,
+.plus {
+    color: $secondary-color;
+    background: $light-muted;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.qtyBox {
+    color: $gray-02;
+    border: 1px solid $gray-06;
+    border-radius: 4px;
+    background: $white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 0px 8px;
+}
+
+.unitPrice {
+    font-size: 12px;
+    align-self: center;
+}
+
+.primary {
+    margin-bottom: 16px;
+}
+
+hr {
+    color: $gray-03;
+}
+
+.orderSummary {
+    margin: 24px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    p {
+        display: inline-flex;
+        margin: 8px;
+    }
+}
+
+.cta {
+    background: $white;
+    border-radius: 4px;
+    margin: 24px !important;
+
+    .secondary {
+        border-color: $green !important;
+        color: $green !important;
+        margin-bottom: 16px;
+        
+        path {
+            fill: $green !important;
+        }
+    }
+
+    .primary {
+        background: $green !important;
+    }
+
+    small {
+        text-align: center;
+        align-self: center;
+    }
+}
+
+.red {
+    color: #9C182F;
+}

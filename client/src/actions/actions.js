@@ -4,3 +4,10 @@ export const storeImageData = (imageData) => {
         payload: imageData
     };
 };
+
+export const storeQuoteData = (quoteData) => {
+    return {
+        type: 'STORE_QUOTE_DATA',
+        payload: quoteData
+    };
+};
