@@ -4,11 +4,17 @@ import '../scss/pages/CompetitiveQuote.scss';
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { useNavigate } from "react-router-dom";
 
 const CompetitiveQuotePage = () => {
+    const navigate = useNavigate();
     const qty = 379;
     const item_ids = useSelector(state => state.quote);
     let [products, setProducts] = useState([]);
+
+    const reset = () => {
+        navigate('/');
+    };
 
     useEffect(() => {
         let id_string = item_ids.quoteData;
@@ -26,7 +32,7 @@ const CompetitiveQuotePage = () => {
             // Fetch each product data
             const fetchProducts = async () => {
                 const allProducts = await Promise.all(id_array.map(async id => {
-                    const response = await fetch(`/api/product/${id}`);
+                    const response = await fetch(`https://hackathon-api-service.onrender.com/api/product/${id}`);
                     const product = await response.json();
                     return product;
                 }));
@@ -55,7 +61,7 @@ const CompetitiveQuotePage = () => {
                             <div className="qtyBox">{qty}</div>
                             <div className="plus"><FontAwesomeIcon icon={icon({name: 'plus', family: 'sharp', style: 'regular'})} size="lg" /></div>
                         </div>
-                        <p className="unitPrice">{product.item.price}/ea</p>
+                        <p className="unitPrice">${product.item.price}/ea</p>
                         <button className="primary">Confirm</button>
                         <button className="secondary">Not Accurate</button>
                     </div>
@@ -75,7 +81,7 @@ const CompetitiveQuotePage = () => {
 
             <section className="cta">
                 <button className="secondary"><FontAwesomeIcon icon={icon({name: 'lock', family: 'sharp', style: 'regular'})} size="lg" /> Start Secure Checkout</button>
-                <button className="primary">Submit for Competitive Quote</button>
+                <button className="primary" onClick={reset}>Submit for Competitive Quote</button>
                 <small>Your quote may qualify for volume savings but needs to be reviewed by our quoting team. It will be returned within 24 hours with applicable discounts.</small>
             </section>
         </div>

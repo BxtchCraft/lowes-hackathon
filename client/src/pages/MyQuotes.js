@@ -5,6 +5,8 @@ import '../scss/pages/MyQuotes.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 
+import axios from 'axios';
+
 const MyQuotesPage = () => {
     const [showModal, setShowModal] = useState(false);
 
@@ -14,6 +16,16 @@ const MyQuotesPage = () => {
 
     const handleCloseModal = () => {
         setShowModal(false);
+    };
+
+    const apiTest = () => {
+        axios.get('https://hackathon-api-service.onrender.com/api/products')
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.error('Error fetching data: ', error);
+        });
     };
 
     return (
@@ -41,7 +53,7 @@ const MyQuotesPage = () => {
             </section>
 
             <section className="buttons">
-                <button className="primary"><FontAwesomeIcon icon={icon({name: 'plus', family: 'sharp', style: 'regular'})} size="sm" /> Create a New Quote</button>
+                <button onClick={apiTest} className="primary"><FontAwesomeIcon icon={icon({name: 'plus', family: 'sharp', style: 'regular'})} size="sm" /> Create a New Quote</button>
                 <button onClick={handleOpenModal} className="secondary"><FontAwesomeIcon icon={icon({name: 'plus', family: 'sharp', style: 'regular'})} size="sm" /> Create a New Competitive Quote</button>
             </section>
 

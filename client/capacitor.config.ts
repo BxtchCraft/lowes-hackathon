@@ -5,7 +5,9 @@ const config: CapacitorConfig = {
   appName: 'PRO Competitive Pricing',
   webDir: 'public',
   server: {
-    androidScheme: 'https'
+    androidScheme: 'https',
+    allowNavigation: ["https://hackathon-api-service.onrender.com"],
+    cleartext: true,
   }
 };
 
